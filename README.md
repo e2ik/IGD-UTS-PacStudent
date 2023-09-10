@@ -8,3 +8,6 @@ Acitivity Log
 - Repository Creation
 - Unity Project Created
 - Development Branch created
+- Feature-Visual Branch created
+- Added Pacman (Zombie) Sprites
+- Added ZombieRun animation + HorizonalRunAnim (SimpleAnimator)
