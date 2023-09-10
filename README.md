@@ -13,3 +13,4 @@ Acitivity Log
 - Feature-Visual Branch created
 - Added Pacman (Zombie) Sprites
 - Added ZombieRun animation + HorizonalRunAnim (SimpleAnimator)
+- Assets fix
