@@ -107,85 +107,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_0
+      name: ZombieMoveLeft_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 132
-        width: 92
-        height: 120
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67181f15737b4484187ec569f450e652
-      internalID: 1763908075
+      spriteID: 8f98aec2495b0364ba028dd72d313279
+      internalID: -1828975463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_1
+      name: ZombieMoveLeft_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 132
-        width: 92
-        height: 120
+        x: 128
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c318a43550d64e047a0f90137868371d
-      internalID: 1313419693
+      spriteID: 4f30c3f820591ba43ae0d3ee2a540516
+      internalID: -1089178869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_2
+      name: ZombieMoveLeft_2
       rect:
         serializedVersion: 2
-        x: 272
-        y: 132
-        width: 92
-        height: 120
+        x: 256
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65c75ff8692096c4c8b3f11949e64181
-      internalID: 1238184640
+      spriteID: 37aafad2d1439ae41ae019b1afa44eb2
+      internalID: 1519456125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_3
+      name: ZombieMoveLeft_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 4
-        width: 92
-        height: 120
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9f6af09dd399c4986910f88c664e33
-      internalID: -603105380
+      spriteID: 7401483e18ba56b42afd5ded6a5af01d
+      internalID: 1990977558
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Zombie_0: 1763908075
-      Zombie_1: 1313419693
-      Zombie_2: 1238184640
-      Zombie_3: -603105380
+      ZombieMoveLeft_0: -1828975463
+      ZombieMoveLeft_1: -1089178869
+      ZombieMoveLeft_2: 1519456125
+      ZombieMoveLeft_3: 1990977558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

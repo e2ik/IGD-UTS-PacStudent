@@ -110,10 +110,10 @@ TextureImporter:
       name: zombieUp_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 132
-        width: 84
-        height: 120
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: zombieUp_1
       rect:
         serializedVersion: 2
-        x: 148
-        y: 132
-        width: 84
-        height: 120
+        x: 128
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: zombieUp_2
       rect:
         serializedVersion: 2
-        x: 276
-        y: 132
-        width: 84
-        height: 120
+        x: 256
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: zombieUp_3
       rect:
         serializedVersion: 2
-        x: 20
-        y: 4
-        width: 84
-        height: 120
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

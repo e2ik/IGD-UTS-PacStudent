@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eeee3bfcab897b14cb7e2d42a0932b8e
+guid: 7f19819e646089943b3cccbcd64a612e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombieDown_0
+      name: GhostDeadUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5bd71f198769c54484ea7efd298e605
-      internalID: -369882445
+      spriteID: 804f044fa3a5317459add6931766becf
+      internalID: 1893040450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombieDown_1
+      name: GhostDeadUp_1
       rect:
         serializedVersion: 2
         x: 128
@@ -142,14 +142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ba7dca096adf064d8af820de72edef5
-      internalID: 31453091
+      spriteID: 3d048a5cfb1b46e438a54f098f84e88b
+      internalID: 2045751063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombieDown_2
+      name: GhostDeadUp_2
       rect:
         serializedVersion: 2
         x: 256
@@ -163,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a078dbbbfb75f1e4091068ec435fc8f7
-      internalID: 1992195777
+      spriteID: 82037a67dcdc57943a3b225977861ac1
+      internalID: 1891118029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombieDown_3
+      name: GhostDeadUp_3
       rect:
         serializedVersion: 2
         x: 0
@@ -184,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b24c22cffc7624a49a38346a045ba43d
-      internalID: 1700777589
+      spriteID: 6960e5dd45459c64b899feae75c9e0cf
+      internalID: 1418413538
       vertices: []
       indices: 
       edges: []
@@ -193,7 +193,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9f1877ad42c78234dac948022e0b027d
+    spriteID: 70387048d4703914f9510bd135cce9f2
     internalID: 0
     vertices: []
     indices: 
@@ -201,10 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      zombieDown_0: -369882445
-      zombieDown_1: 31453091
-      zombieDown_2: 1992195777
-      zombieDown_3: 1700777589
+      GhostDeadUp_0: 1893040450
+      GhostDeadUp_1: 2045751063
+      GhostDeadUp_2: 1891118029
+      GhostDeadUp_3: 1418413538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
