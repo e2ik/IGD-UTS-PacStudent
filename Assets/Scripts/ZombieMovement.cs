@@ -10,11 +10,12 @@ public class ZombieMovement : MonoBehaviour {
     private Vector3 leftEndPos;
     private Vector3 upEndPos;
     private Vector3 currentPos;
-    public float moveSpeed = 5.0f;
+    public float moveSpeed;
     private float moveLength;
     private float moveStartTime;
 
     void Start() {
+        moveSpeed = 3.0f;
         animator = GetComponent<Animator>();
         animator.Play("MoveRightAnim");
         audioSource = GetComponent<AudioSource>();

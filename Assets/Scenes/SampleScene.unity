@@ -19570,6 +19570,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7273940797050819702, guid: 04cff945056254e4989cfabecc9e4a3c, type: 3}
   m_PrefabInstance: {fileID: 930268240}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &935406825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935406827}
+  - component: {fileID: 935406826}
+  m_Layer: 0
+  m_Name: Generated Level01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &935406826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935406825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b18d864bca2654d941bc04c20e36a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile_1: {fileID: 553748036072787954, guid: bc619c3b5b954f94aa95fec839c12985, type: 3}
+  tile_2: {fileID: 8082350022653054794, guid: e737d05b31e0e2a47b314520f6e76a8a, type: 3}
+  tile_3: {fileID: 1329669668061546087, guid: 04cff945056254e4989cfabecc9e4a3c, type: 3}
+  tile_4: {fileID: 8807003704031392003, guid: d7f5aae0efcbeff48a9ba9952d93d9ab, type: 3}
+  tile_5: {fileID: 4906378133338148485, guid: f0f9db13aa6899148ae00ed0d11a61c9, type: 3}
+  tile_6: {fileID: 1185114323354851870, guid: 3e336788a2b285a46ae6fb2d4410c85d, type: 3}
+  tile_7: {fileID: 6230893954149864567, guid: c88e862d2420d284aaf97f6314f8d677, type: 3}
+--- !u!4 &935406827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935406825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.547222, y: 9.54681, z: -0.03826961}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &936052430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40517,7 +40568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ee43daf83a5dd4c9457d2979b8145f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 3
 --- !u!1001 &1952893018
 PrefabInstance:
   m_ObjectHideFlags: 0
