@@ -14,3 +14,9 @@ Acitivity Log
 - Added Pacman (Zombie) Sprites
 - Added ZombieRun animation + HorizonalRunAnim (SimpleAnimator)
 - Assets fix
+- Fixed ZombieRUn animation, added all 4 directions
+
+26 Sep 2023
+- Added remaining Sprite Assets
+- Set up Animation controllers to loop through
+- Added manual layout of maze
