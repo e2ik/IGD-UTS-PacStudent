@@ -28,21 +28,73 @@ public class LevelGenerator : MonoBehaviour
         {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
         
-        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
-        // {7,4,4,4,4,3,5,3,4,4,4,3,5,4},
-        // {7,4,4,4,4,3,5,4,0,0,0,4,5,4},
+        // checking T junctions and outside corners
+        // {1,2,2,2,1,1,2,2,2,2,2,2,2,7},
+        // {2,5,5,5,2,2,5,5,5,5,5,5,5,3},
+        // {1,2,1,5,2,2,5,3,4,4,4,3,5,5},
+        // {1,2,1,5,1,1,5,4,0,0,0,4,5,3},
         // {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
-        // {2,5,3,4,3,5,5,5,5,5,5,5,5,5},
-        // {2,5,4,0,4,5,3,4,3,5,3,3,5,3},
-        // {2,5,3,4,3,5,3,4,3,5,3,3,5,4},
+        // {7,4,4,4,3,5,5,5,5,5,5,5,5,5},
+        // {2,0,0,0,4,5,3,4,3,5,3,3,5,3},
+        // {7,4,4,4,3,5,3,4,3,5,3,3,5,4},
         // {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
-        // {1,2,2,2,2,1,5,3,4,4,4,3,0,4},
+        // {2,5,1,1,5,5,5,3,4,4,4,3,0,4},
+        // {2,5,2,2,5,5,5,4,3,4,4,3,0,3},
+        // {1,2,1,1,2,1,5,4,4,0,0,0,0,0},
+        // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
+        // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+
+        // checking Ts from botom
+        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
+        // {7,4,4,4,4,3,5,3,4,4,4,3,5,5},
+        // {7,4,4,4,4,3,5,4,0,0,0,4,5,3},
+        // {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
+        // {2,5,5,3,3,5,5,5,5,5,5,5,5,5},
+        // {2,5,3,3,4,5,3,4,3,5,3,3,5,3},
+        // {2,5,4,3,3,5,3,4,3,5,3,3,5,4},
+        // {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
+        // {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
         // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
         // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
         // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
         // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+
+        // Ts and pluses
+        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
+        // {2,5,3,3,5,5,5,3,4,4,4,3,5,5},
+        // {7,4,3,3,3,5,5,4,0,0,0,4,5,3},
+        // {7,4,3,3,3,5,5,3,4,4,4,3,5,3},
+        // {2,5,3,3,5,5,5,5,5,5,5,5,5,5},
+        // {2,5,5,5,5,5,3,4,3,5,3,3,5,3},
+        // {2,5,3,3,5,5,3,4,3,5,3,3,5,4},
+        // {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
+        // {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
+        // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
+        // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
+        // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+
+        // just for fun - outside walls
+        // {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        // {0,0,0,0,0,1,2,1,1,2,1,0,0,0},
+        // {0,0,0,1,2,1,5,1,1,5,1,2,1,0},
+        // {0,0,1,1,5,5,5,5,5,5,5,5,2,0},
+        // {0,1,1,5,5,3,4,4,3,5,5,1,1,0},
+        // {0,2,5,5,5,3,3,3,3,5,5,2,0,0},
+        // {0,1,2,1,5,5,4,4,5,5,5,1,2,2},
+        // {0,1,2,1,5,3,3,3,3,5,5,0,0,0},
+        // {0,2,5,5,5,3,3,3,3,5,5,1,2,2},
+        // {0,1,1,5,5,5,3,3,5,5,5,2,0,0},
+        // {0,0,1,2,1,5,5,5,5,5,5,1,1,0},
+        // {0,0,0,0,2,5,5,5,5,5,5,5,2,0},
+        // {0,0,0,0,1,2,1,0,1,2,1,5,2,0},
+        // {0,0,0,0,0,0,2,0,2,0,1,2,1,0},
+        // {0,0,0,0,0,0,2,0,2,0,0,0,0,0},
 
         // {1,2,7,2,7,2,2,2,2,2,2,2,2,7},
         // {2,5,4,0,4,5,5,5,5,5,5,5,5,4},
@@ -53,6 +105,22 @@ public class LevelGenerator : MonoBehaviour
         // {2,5,5,5,5,5,3,4,3,5,3,4,4,4},
         // {2,5,3,3,5,5,3,4,3,5,3,4,4,3},
         // {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
+        // {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
+        // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
+        // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
+        // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+
+        // {1,2,7,7,2,7,7,2,2,2,2,2,2,7},
+        // {2,5,2,2,5,1,1,5,5,5,5,5,5,4},
+        // {2,5,1,1,5,5,5,5,5,3,4,4,4,3},
+        // {2,5,5,5,5,5,3,3,5,3,4,4,4,3},
+        // {2,5,3,3,5,5,3,3,5,5,5,5,5,3},
+        // {2,5,3,3,5,5,5,5,3,4,4,3,5,5},
+        // {2,5,5,5,5,5,3,4,3,0,0,3,4,4},
+        // {2,5,1,1,5,5,3,4,4,4,4,4,4,3},
+        // {2,5,2,2,5,5,5,5,5,5,5,5,5,4},
         // {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
         // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
         // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
@@ -94,16 +162,44 @@ public class LevelGenerator : MonoBehaviour
         // {2,5,5,5,5,5,5,5,5,5,5,5,5,2},
         // {1,2,2,2,2,1,5,5,1,2,2,2,2,1},
 
-        // test different size
-        // {1,2,2,2,2,2,2,2,2,2,2,2,7},
-        // {2,5,5,5,3,3,3,3,5,5,5,5,4},
+        //zigzag without pellets
+        // {1,2,2,2,2,1,5,1,2,2,2,2,2,1},
+        // {2,5,5,5,5,5,5,5,0,0,0,0,0,2},
+        // {2,5,5,5,5,5,5,0,0,3,4,3,0,2},
+        // {2,5,5,5,5,5,0,0,3,3,3,3,0,2},
+        // {2,5,5,5,5,0,0,3,3,3,3,0,0,2},
+        // {2,5,5,5,0,0,3,3,3,3,0,0,5,1},
+        // {1,5,5,0,0,3,3,3,3,0,0,5,5,5},
+        // {5,5,0,0,3,3,3,3,0,5,5,5,5,5},
+        // {1,0,0,3,3,3,3,0,0,5,5,5,5,1},
+        // {2,0,3,3,3,3,0,0,5,5,5,5,5,2},
+        // {2,0,3,4,3,0,0,5,5,5,5,5,5,2},
+        // {2,0,0,0,0,0,5,5,5,5,5,5,5,2},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,2},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,2},
+        // {1,2,2,2,2,1,5,5,1,2,2,2,2,1},
+
+        // test different size (just to see if generating places correctly)
+        // {1,2,2,2,2,2,2,2,2,2,2,2,7},        
+        // {2,5,5,5,5,5,5,5,5,5,5,5,4},
+        // {2,5,5,5,3,4,3,5,5,5,5,5,4},
         // {2,5,5,3,3,3,3,5,5,5,5,5,4},
         // {2,5,3,3,3,3,5,5,5,5,5,5,3},
         // {2,5,3,4,3,5,5,5,5,5,5,5,5},
         // {2,5,5,5,5,5,5,5,5,5,5,5,5},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,2},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,2},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,1},
         // {1,2,2,2,2,1,5,5,1,2,2,2,1},
+
+        // connected pluses smol size
+        // {1,2,2,2,2,2,2,2,2,2,2,2,2},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5},
+        // {2,5,5,3,3,5,3,3,5,3,3,5,3},
+        // {2,5,3,3,3,4,3,3,4,3,3,4,3},
+        // {2,5,3,3,3,4,3,3,4,3,3,4,3},
+        // {2,5,5,3,3,5,3,3,5,3,3,5,3},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5},
+        // {1,2,2,2,2,1,5,1,2,2,2,2,2},
+        // {0,0,0,0,0,2,5,2,0,0,0,0,0},
     };
     private int numRows;
     private int numCols;
@@ -147,16 +243,68 @@ public class LevelGenerator : MonoBehaviour
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
 
-                    if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
+
+                    if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0) && (cell_right == 5 || cell_right == 0) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 5 || cell_up == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                     } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_down == 5 || cell_down == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_down == 5 || cell_down == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+
+                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0) && (cell_left == 5 || cell_left == 0))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+
+                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    
+                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5) && (cell_right == 5 || cell_right == 0))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+
+                    } else if (cell == 1 && cell_left < 0 && cell_right == 1) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0) && (cell_down == 2 || cell_down == 7))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+
                     } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
                         if (cell_leftUp == 5 || cell_leftUp == 0) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
@@ -185,28 +333,28 @@ public class LevelGenerator : MonoBehaviour
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                     } else if (cell == 1 && ((cell_left == 7 || cell_left == 2 || cell_left == 1) && (cell_up == 7 || cell_up == 2 || cell_up == 1))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_right <= 0) {
+                    } else if (cell == 1 && cell_right < 0) {
                         if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                         }
                         if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                         }
-                    } else if (cell == 1 && cell_up <= 0) {
+                    } else if (cell == 1 && cell_up < 0) {
                         if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                         }
                         if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
                         }
-                    } else if (cell == 1 && cell_left <= 0) {
+                    } else if (cell == 1 && cell_left < 0) {
                         if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
                         }
                         if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                         }
-                    } else if (cell == 1 && cell_down <= 0) {
+                    } else if (cell == 1 && cell_down < 0) {
                         if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                         }
@@ -262,16 +410,64 @@ public class LevelGenerator : MonoBehaviour
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
 
-                    if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
+                    if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 5 || cell_up == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                     } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_down == 5 || cell_down == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                     } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_down == 5 || cell_down == 0)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0) && (cell_right == 5 || cell_right == 0) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+
+                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0) && (cell_left == 5 || cell_left == 0))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    
+                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5) && (cell_right == 5 || cell_right == 0))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+
+                    } else if (cell == 1 && cell_left < 0 && cell_right == 1) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0) && (cell_down == 2 || cell_down == 7))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+
                     } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
                         if (cell_leftUp == 5 || cell_leftUp == 0) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
@@ -300,28 +496,28 @@ public class LevelGenerator : MonoBehaviour
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                     } else if (cell == 1 && ((cell_left == 7 || cell_left == 2 || cell_left == 1) && (cell_up == 7 || cell_up == 2 || cell_up == 1))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_right <= 0) {
+                    } else if (cell == 1 && cell_right < 0) {
                         if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                         }
                         if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                         }
-                    } else if (cell == 1 && cell_up <= 0) {
+                    } else if (cell == 1 && cell_up < 0) {
                         if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
                         }
                         if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
                         }
-                    } else if (cell == 1 && cell_left <= 0) {
+                    } else if (cell == 1 && cell_left < 0) {
                         if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
                         }
                         if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                         }
-                    } else if (cell == 1 && cell_down <= 0) {
+                    } else if (cell == 1 && cell_down < 0) {
                         if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                         }
