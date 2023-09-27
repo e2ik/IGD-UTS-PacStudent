@@ -17,7 +17,7 @@ public class ZombieMovement : MonoBehaviour {
     void Start() {
         moveSpeed = 3.0f;
         animator = GetComponent<Animator>();
-        animator.Play("MoveRightAnim");
+        animator.SetBool("movingRight", true);
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(PlayAudio());
         startPos = transform.position;
@@ -25,6 +25,7 @@ public class ZombieMovement : MonoBehaviour {
         downEndPos = rightEndPos + Vector3.down * 4.0f;
         leftEndPos = downEndPos + Vector3.left * 5.0f;
         upEndPos = leftEndPos + Vector3.up * 4.0f;
+        moveSpeed = 3.0f;
 
         currentPos = rightEndPos;
         moveLength = Vector3.Distance(startPos, currentPos);
@@ -40,19 +41,23 @@ public class ZombieMovement : MonoBehaviour {
 
             if (currentPos == rightEndPos) {
                 currentPos = downEndPos;
-                animator.Play("MoveDownAnim");
+                animator.SetBool("movingRight", false);
+                animator.SetBool("movingDown", true);
             }
             else if (currentPos == downEndPos) {
                 currentPos = leftEndPos;
-                animator.Play("MoveLeftAnim");
+                animator.SetBool("movingDown", false);
+                animator.SetBool("movingLeft", true);
             }
             else if (currentPos == leftEndPos) {
                 currentPos = upEndPos;
-                animator.Play("MoveUpAnim");
+                animator.SetBool("movingLeft", false);
+                animator.SetBool("movingUp", true);
             }
             else if (currentPos == upEndPos) {
                 currentPos = rightEndPos;
-                animator.Play("MoveRightAnim");
+                animator.SetBool("movingUp", false);
+                animator.SetBool("movingRight", true);
             }
             moveLength = Vector3.Distance(startPos, currentPos);
         }
