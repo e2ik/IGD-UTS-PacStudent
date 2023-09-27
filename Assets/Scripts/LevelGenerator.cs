@@ -243,88 +243,31 @@ public class LevelGenerator : MonoBehaviour
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
 
-
-                    if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-
-                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0) && (cell_right == 5 || cell_right == 0) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                    // All cell 1 logic
+                    if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0 || cell_down == 6) && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 5 || cell_up == 0)) {
+                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));                    
+                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_down == 5 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_down == 5 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-
-                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0) && (cell_left == 5 || cell_left == 0))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5 || cell_down == 6) && (cell_right == 5 || cell_right == 0 || cell_right == 6))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5 || cell_down == 6))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-
-                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    
-                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5) && (cell_right == 5 || cell_right == 0))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-
                     } else if (cell == 1 && cell_left < 0 && cell_right == 1) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0) && (cell_down == 2 || cell_down == 7))) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_down == 2 || cell_down == 7))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-
-                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5)) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-
-                    } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
-                        if (cell_leftUp == 5 || cell_leftUp == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                        }
-                        if (cell_leftDown == 5 || cell_leftDown == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                        }
-                        if (cell_rightUp == 5 || cell_rightUp == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                        }
-                        if (cell_rightDown == 5 || cell_rightDown == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                        }
-                    } else if (cell == 3 && (cell_left == 4 || cell_left == 3) && (cell_down == 4 || cell_down == 3)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && cell_right == 4 && cell_up == 4) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && cell_left == 4 && cell_down == 4) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-
                     } else if (cell == 1 && ((cell_right == 7 || cell_right == 2 || cell_right == 1) && (cell_down == 7 || cell_down == 2 || cell_down == 1))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                     } else if (cell == 1 && ((cell_up == 7 || cell_up == 2 || cell_up == 1) && (cell_right == 7 || cell_right == 2 || cell_right == 1))) {
@@ -361,11 +304,65 @@ public class LevelGenerator : MonoBehaviour
                         if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                         }
-
-                    } else if (cell == 4 && (cell_up == 5 || cell_down == 5 || cell_up == 0 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 4 && (cell_left == 5 || cell_right == 5 || cell_left == 0 || cell_right == 0)) {
+                    
+                    // All cell 2 logic
+                    } else if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    // All cell 3 logic
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 5 || cell_up == 0 || cell_up == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_left == 5 || cell_left == 0 || cell_left == 6))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5 || cell_rightUp == 6)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
+                        if (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                        }
+                        if (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                        }
+                        if (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                        }
+                        if (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                        }
+                    } else if (cell == 3 && (cell_left == 4 || cell_left == 3) && (cell_down == 4 || cell_down == 3)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right == 4 && cell_up == 4) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && cell_left == 4 && cell_down == 4) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+
+                    // All cell 4 logic
+                    } else if (cell == 4 && (cell_up == 5 || cell_down == 5 || cell_up == 0 || cell_down == 0 || cell_up == 6 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 4 && (cell_left == 5 || cell_right == 5 || cell_left == 0 || cell_right == 0 || cell_left == 6 || cell_right == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    // All cell 7 logic
                     } else if (cell == 7 && cell_up <= 0) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                     } else if (cell == 7 && cell_down <= 0) {
@@ -410,84 +407,31 @@ public class LevelGenerator : MonoBehaviour
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
 
-                    if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0)) {
+                    // All cell 1 logic
+                    if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0 || cell_down == 6) && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_up == 5 || cell_up == 0)) {
+                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));                    
+                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0) && (cell_down == 5 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0) && (cell_down == 5 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0) && (cell_right == 5 || cell_right == 0) && (cell_rightDown == 5 || cell_rightDown == 0)) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5 || cell_down == 6) && (cell_right == 5 || cell_right == 0 || cell_right == 6))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-
-                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0) && (cell_left == 5 || cell_left == 0))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 1 && cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0)) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5 || cell_down == 6))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 1 && (cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 1 && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    
-                    } else if (cell == 1 && cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 1 && cell_up <= 0 && (cell_right == 2 || cell_right == 7 || cell_right == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_rightDown == 5 || cell_rightDown == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5) && (cell_right == 5 || cell_right == 0))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5))) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-
                     } else if (cell == 1 && cell_left < 0 && cell_right == 1) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0) && (cell_down == 2 || cell_down == 7))) {
+                    } else if (cell == 1 && cell_left < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_down == 2 || cell_down == 7))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-
-                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5)) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5)) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-
-                    } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
-                        if (cell_leftUp == 5 || cell_leftUp == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
-                        }
-                        if (cell_leftDown == 5 || cell_leftDown == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                        }
-                        if (cell_rightUp == 5 || cell_rightUp == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                        }
-                        if (cell_rightDown == 5 || cell_rightDown == 0) {
-                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
-                        }
-                    } else if (cell == 3 && (cell_left == 4 || cell_left == 3) && (cell_down == 4 || cell_down == 3)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-                    } else if (cell == 3 && cell_right == 4 && cell_up == 4) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 3 && cell_left == 4 && cell_down == 4) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
-
                     } else if (cell == 1 && ((cell_right == 7 || cell_right == 2 || cell_right == 1) && (cell_down == 7 || cell_down == 2 || cell_down == 1))) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                     } else if (cell == 1 && ((cell_up == 7 || cell_up == 2 || cell_up == 1) && (cell_right == 7 || cell_right == 2 || cell_right == 1))) {
@@ -524,11 +468,65 @@ public class LevelGenerator : MonoBehaviour
                         if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
                             segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
                         }
-
-                    } else if (cell == 4 && (cell_up == 5 || cell_down == 5 || cell_up == 0 || cell_down == 0)) {
-                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
-                    } else if (cell == 4 && (cell_left == 5 || cell_right == 5 || cell_left == 0 || cell_right == 0)) {
+                    
+                    // All cell 2 logic
+                    } else if (cell == 2 && (cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 2 && (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 2 && (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    // All cell 3 logic
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 5 || cell_up == 0 || cell_up == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && (cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && cell_leftUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_left < 0 && cell_rightUp <= 0) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_left == 5 || cell_left == 0 || cell_left == 6))) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                    } else if (cell == 3 && cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5 || cell_rightUp == 6)) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && (cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
+                        if (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,180));
+                        }
+                        if (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                        }
+                        if (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                        }
+                        if (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6) {
+                            segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+                        }
+                    } else if (cell == 3 && (cell_left == 4 || cell_left == 3) && (cell_down == 4 || cell_down == 3)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+                    } else if (cell == 3 && cell_right == 4 && cell_up == 4) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 3 && cell_left == 4 && cell_down == 4) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,270));
+
+                    // All cell 4 logic
+                    } else if (cell == 4 && (cell_up == 5 || cell_down == 5 || cell_up == 0 || cell_down == 0 || cell_up == 6 || cell_down == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,90));
+                    } else if (cell == 4 && (cell_left == 5 || cell_right == 5 || cell_left == 0 || cell_right == 0 || cell_left == 6 || cell_right == 6)) {
+                        segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
+
+                    // All cell 7 logic
                     } else if (cell == 7 && cell_up <= 0) {
                         segment = Instantiate(tile, pos, Quaternion.Euler(0,0,0));
                     } else if (cell == 7 && cell_down <= 0) {
