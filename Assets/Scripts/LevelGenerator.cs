@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -14,21 +13,21 @@ public class LevelGenerator : MonoBehaviour
     
     private int[,] levelMap =
     {   // OG maze
-        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
-        // {2,5,3,4,4,3,5,3,4,4,4,3,5,4},
-        // {2,6,4,0,0,4,5,4,0,0,0,4,5,4},
-        // {2,5,3,4,4,3,5,3,4,4,4,3,5,3},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,5,5},
-        // {2,5,3,4,4,3,5,3,3,5,3,4,4,4},
-        // {2,5,3,4,4,3,5,4,4,5,3,4,4,3},
-        // {2,5,5,5,5,5,5,4,4,5,5,5,5,4},
-        // {1,2,2,2,2,1,5,4,3,4,4,3,0,4},
-        // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
-        // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
-        // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
-        // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
-        // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+        {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
+        {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
+        {2,5,3,4,4,3,5,3,4,4,4,3,5,4},
+        {2,6,4,0,0,4,5,4,0,0,0,4,5,4},
+        {2,5,3,4,4,3,5,3,4,4,4,3,5,3},
+        {2,5,5,5,5,5,5,5,5,5,5,5,5,5},
+        {2,5,3,4,4,3,5,3,3,5,3,4,4,4},
+        {2,5,3,4,4,3,5,4,4,5,3,4,4,3},
+        {2,5,5,5,5,5,5,4,4,5,5,5,5,4},
+        {1,2,2,2,2,1,5,4,3,4,4,3,0,4},
+        {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
+        {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
+        {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
         
         // checking T junctions and outside corners
         // {1,2,2,2,1,1,2,2,2,2,2,2,2,2},
@@ -51,8 +50,8 @@ public class LevelGenerator : MonoBehaviour
         // {1,2,2,2,2,2,1,1,2,2,2,2,2,7},
         // {2,5,5,5,5,5,2,2,5,5,5,5,5,3},
         // {2,5,5,5,5,1,1,1,1,5,5,5,5,5},
-        // {2,5,5,5,5,1,2,2,1,5,5,5,5,3},
-        // {2,5,1,1,5,5,5,5,5,5,5,5,5,3},
+        // {2,5,5,5,5,1,2,2,1,5,5,3,4,4},
+        // {2,5,1,1,5,5,5,5,5,5,5,3,4,4},
         // {1,2,1,2,5,5,5,5,5,5,5,5,5,5},
         // {1,2,1,2,5,5,3,4,3,5,3,3,5,3},
         // {2,5,1,1,5,5,3,4,3,5,3,3,5,4},
@@ -64,22 +63,22 @@ public class LevelGenerator : MonoBehaviour
         // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
 
-        // checking Ts from botom
-        {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
-        {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
-        {7,4,4,4,4,3,5,3,4,4,4,3,5,5},
-        {7,4,4,4,4,3,5,4,0,0,0,4,5,3},
-        {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
-        {2,5,5,3,3,5,5,5,5,5,5,5,5,5},
-        {2,5,3,3,4,5,3,4,3,5,3,3,5,3},
-        {2,5,4,3,3,5,3,4,3,5,3,3,5,4},
-        {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
-        {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
-        {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
-        {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
-        {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
-        {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
-        {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+        // checking Ts from bottom
+        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
+        // {7,4,4,4,4,3,5,3,4,4,4,3,5,5},
+        // {7,4,4,4,4,3,5,4,0,0,0,4,5,3},
+        // {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
+        // {2,5,5,3,3,5,5,5,5,5,5,5,5,5},
+        // {2,5,3,3,4,5,3,4,3,5,3,3,5,3},
+        // {2,5,4,3,3,5,3,4,3,5,3,3,5,4},
+        // {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
+        // {1,2,7,7,2,1,5,5,5,5,3,3,0,4},
+        // {0,0,0,0,0,2,5,3,3,5,3,3,0,3},
+        // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        // {2,2,2,2,2,1,5,4,4,0,4,0,0,0},
+        // {0,0,0,0,0,0,5,4,4,0,4,0,0,0},
 
         // Ts and pluses
         // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
@@ -103,8 +102,25 @@ public class LevelGenerator : MonoBehaviour
         // {0,0,0,1,2,2,1,1,2,2,1,0,0,0},
         // {0,0,1,1,5,5,2,2,5,5,1,2,1,0},
         // {0,0,2,5,5,1,1,1,1,5,5,5,2,0},
-        // {0,1,1,5,5,1,2,2,1,5,5,1,1,0},
-        // {0,2,5,5,5,5,5,5,5,5,5,2,0,0},
+        // {0,1,1,5,5,1,1,1,1,5,5,1,1,0},
+        // {0,2,5,5,5,5,1,1,5,5,5,2,0,0},
+        // {0,1,2,1,5,5,5,5,5,5,5,1,2,2},
+        // {0,1,2,1,5,5,5,5,5,5,5,0,0,0},
+        // {0,2,5,5,5,5,5,5,5,5,5,1,2,2},
+        // {0,2,5,1,2,2,1,5,5,5,5,2,0,0},
+        // {0,2,5,1,1,1,1,5,5,5,5,1,1,0},
+        // {0,2,5,5,2,2,5,5,5,5,5,5,2,0},
+        // {0,1,2,2,1,1,1,0,1,2,1,5,2,0},
+        // {0,0,0,0,0,0,2,0,2,0,1,2,1,0},
+        // {0,0,0,0,0,0,2,0,2,0,0,0,0,0},
+
+        // test if connecter is at top rather than side
+        // {0,0,0,0,0,0,0,0,0,0,0,0,2,5},
+        // {0,0,0,1,2,2,1,1,2,2,1,0,2,5},
+        // {0,0,1,1,5,5,2,2,5,5,2,0,2,5},
+        // {0,0,2,5,5,1,1,1,1,5,1,2,1,5},
+        // {0,1,1,5,5,1,2,2,1,5,5,5,5,5},
+        // {0,2,5,5,5,5,5,5,5,5,5,1,2,2},
         // {0,1,2,1,5,5,5,5,5,5,5,1,2,2},
         // {0,1,2,1,5,5,5,5,5,5,5,0,0,0},
         // {0,2,5,5,5,5,5,5,5,5,5,1,2,2},
@@ -131,6 +147,8 @@ public class LevelGenerator : MonoBehaviour
         // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
 
+        // this map has a 7 connecting to outer piece
+        // so don't worry too much
         // {1,2,7,7,2,7,7,2,2,2,2,2,2,7},
         // {2,5,2,2,5,1,1,5,5,5,5,5,5,4},
         // {2,5,1,1,5,5,5,5,5,3,4,4,4,3},
@@ -229,9 +247,9 @@ public class LevelGenerator : MonoBehaviour
     };
     public int numRows { get; private set; }
     public int numCols { get; private set; }
-    private List<int> outsidePiece = new List<int> { 2, 1, 7 };
-    private List<int> nonWallPiece = new List<int> { 0, 5, 6, -1 };
-    private List<int> insidePiece = new List<int> { 3, 4 } ;
+    private int[] outside = {2,1,7};
+    private int[] inside = {3,4};
+    private int[] nonWall = {-1, 0, 5, 6};
 
     void Start()
     {
@@ -245,45 +263,64 @@ public class LevelGenerator : MonoBehaviour
         GenerateLevel();
     }
 
+    bool outsidePieceFoundIn(int cell) {
+        foreach (int i in outside) {
+            if (cell == i) { return true; }
+        }
+        return false;
+    }
+
+    bool insidePieceFoundIn(int cell) {
+        foreach (int i in inside) {
+            if (cell == i) { return true; }
+        }
+        return false;
+    }
+
+    bool nonWallFoundIn(int cell) {
+        foreach (int i in nonWall) {
+            if (cell == i) { return true; }
+        }
+        return false;
+    }
 
     Quaternion getRotation_1(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 1 logic
-
-        if (outsidePiece.Contains(cell_right) && outsidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_rightDown)) {
+        if (outsidePieceFoundIn(cell_right) && outsidePieceFoundIn(cell_down) && nonWallFoundIn(cell_rightDown)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        if (outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_leftDown)) {
+        if (outsidePieceFoundIn(cell_left) && outsidePieceFoundIn(cell_down) && nonWallFoundIn(cell_leftDown)) {
             return Quaternion.Euler(0,0,270);
         }
 
-        if (outsidePiece.Contains(cell_right) && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_rightUp)) {
+        if (outsidePieceFoundIn(cell_right) && outsidePieceFoundIn(cell_up) && nonWallFoundIn(cell_rightUp)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if (outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftUp)) {
+        if (outsidePieceFoundIn(cell_left) && outsidePieceFoundIn(cell_up) && nonWallFoundIn(cell_leftUp)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_right)) {
+        if (outsidePieceFoundIn(cell_up) && outsidePieceFoundIn(cell_right)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_left)) {
+        if (outsidePieceFoundIn(cell_up) && outsidePieceFoundIn(cell_left)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (outsidePiece.Contains(cell_down) && outsidePiece.Contains(cell_right)) {
+        if (outsidePieceFoundIn(cell_down) && outsidePieceFoundIn(cell_right)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        if (outsidePiece.Contains(cell_down) && outsidePiece.Contains(cell_left)) {
+        if (outsidePieceFoundIn(cell_down) && outsidePieceFoundIn(cell_left)) {
             return Quaternion.Euler(0,0,270);
         }
 
         if (cell_up == -1) {
-            if (outsidePiece.Contains(cell_left)) {
+            if (outsidePieceFoundIn(cell_left)) {
                 return Quaternion.Euler(0,0,180);
             } else {
                 return Quaternion.Euler(0,0,90);
@@ -291,7 +328,7 @@ public class LevelGenerator : MonoBehaviour
         }
 
         if (cell_left == -1) {
-            if (outsidePiece.Contains(cell_up)) {
+            if (outsidePieceFoundIn(cell_up)) {
                 return Quaternion.Euler(0,0,180);
             } else {
                 return Quaternion.Euler(0,0,270);
@@ -299,7 +336,7 @@ public class LevelGenerator : MonoBehaviour
         }
 
         if (cell_right == -1) {
-            if (outsidePiece.Contains(cell_up)) {
+            if (outsidePieceFoundIn(cell_up)) {
                 return Quaternion.Euler(0,0,90);
             } else {
                 return Quaternion.Euler(0,0,0);
@@ -307,7 +344,7 @@ public class LevelGenerator : MonoBehaviour
         }
 
         if (cell_down == -1) {
-            if (outsidePiece.Contains(cell_left)) {
+            if (outsidePieceFoundIn(cell_left)) {
                 return Quaternion.Euler(0,0,270);
             } else {
                 return Quaternion.Euler(0,0,0);
@@ -319,19 +356,19 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_2(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 2 logic
-        if (outsidePiece.Contains(cell_left) || outsidePiece.Contains(cell_right)) {
-            if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_down)) {
+        if (outsidePieceFoundIn(cell_left) || outsidePieceFoundIn(cell_right)) {
+            if (outsidePieceFoundIn(cell_up) && outsidePieceFoundIn(cell_down)) {
                 return Quaternion.Euler(0,0,90);
             }
         }
 
-        if (outsidePiece.Contains(cell_up) || outsidePiece.Contains(cell_down)) {
-            if (outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_right)) {
+        if (outsidePieceFoundIn(cell_up) || outsidePieceFoundIn(cell_down)) {
+            if (outsidePieceFoundIn(cell_left) && outsidePieceFoundIn(cell_right)) {
                 return Quaternion.Euler(0,0,0);
             }
         }
 
-        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_right)) {
+        if (nonWallFoundIn(cell_left) && nonWallFoundIn(cell_right)) {
             return Quaternion.Euler(0,0,90);
         } else {
             return Quaternion.Euler(0,0,0);
@@ -341,67 +378,51 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_3(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 3 logic
-        if (insidePiece.Contains(cell_up) && insidePiece.Contains(cell_down) &&
-            insidePiece.Contains(cell_right) && insidePiece.Contains(cell_left)) {
-                if (nonWallPiece.Contains(cell_leftUp)) {
+        if (insidePieceFoundIn(cell_up) && insidePieceFoundIn(cell_down) &&
+            insidePieceFoundIn(cell_right) && insidePieceFoundIn(cell_left)) {
+                if (nonWallFoundIn(cell_leftUp)) {
                     return Quaternion.Euler(0,0,180);
                 }
-                if (nonWallPiece.Contains(cell_leftDown)) {
+                if (nonWallFoundIn(cell_leftDown)) {
                     return Quaternion.Euler(0,0,270);
                 }
-                if (nonWallPiece.Contains(cell_rightUp)) {
+                if (nonWallFoundIn(cell_rightUp)) {
                     return Quaternion.Euler(0,0,90);
                 }
-                if (nonWallPiece.Contains(cell_rightUp)) {
+                if (nonWallFoundIn(cell_rightUp)) {
                     return Quaternion.Euler(0,0,0);
                 }
         }
 
-        if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftUp)) {
+        if (insidePieceFoundIn(cell_left) && insidePieceFoundIn(cell_up) && nonWallFoundIn(cell_leftUp)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_leftDown)) {
+        if (insidePieceFoundIn(cell_left) && insidePieceFoundIn(cell_down) && nonWallFoundIn(cell_leftDown)) {
             return Quaternion.Euler(0,0,270);
         }
 
-        if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_rightUp)) {
+        if (insidePieceFoundIn(cell_right) && insidePieceFoundIn(cell_up) && nonWallFoundIn(cell_rightUp)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_rightDown)) {
+        if (insidePieceFoundIn(cell_right) && insidePieceFoundIn(cell_down) && nonWallFoundIn(cell_rightDown)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        // if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_down)) {
-        //     return Quaternion.Euler(0,0,0);
-        // }
-
-        // if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_down)) {
-        //     return Quaternion.Euler(0,0,270);
-        // }
-
-        // if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_up)) {
-        //     return Quaternion.Euler(0,0,90);
-        // }
-
-        // if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_up)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_down)) {
+        if (nonWallFoundIn(cell_left) && nonWallFoundIn(cell_down)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_up)) {
+        if (nonWallFoundIn(cell_left) && nonWallFoundIn(cell_up)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        if (nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_down)) {
+        if (nonWallFoundIn(cell_right) && nonWallFoundIn(cell_down)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_up)) {
+        if (nonWallFoundIn(cell_right) && nonWallFoundIn(cell_up)) {
             return Quaternion.Euler(0,0,270);
         }
         return Quaternion.identity;
@@ -410,12 +431,20 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_4(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 4 logic
-        if ((nonWallPiece.Contains(cell_up) || nonWallPiece.Contains(cell_down)) &&
-            (insidePiece.Contains(cell_left) || insidePiece.Contains(cell_right))) {
+        if ((cell_down == -1 || cell_up == -1) && (insidePieceFoundIn(cell_up) || insidePieceFoundIn(cell_down))) {
+            return Quaternion.Euler(0,0,0);
+        }
+
+        if ((cell_left == -1 || cell_right == -1) && (insidePieceFoundIn(cell_left) || insidePieceFoundIn(cell_right))) {
             return Quaternion.Euler(0,0,90);
         }
-        if ((nonWallPiece.Contains(cell_left) || nonWallPiece.Contains(cell_right)) &&
-            (insidePiece.Contains(cell_up) || insidePiece.Contains(cell_down))) {
+
+        if ((nonWallFoundIn(cell_up) || nonWallFoundIn(cell_down)) &&
+            (insidePieceFoundIn(cell_left) || insidePieceFoundIn(cell_right))) {
+            return Quaternion.Euler(0,0,90);
+        }
+        if ((nonWallFoundIn(cell_left) || nonWallFoundIn(cell_right)) &&
+            (insidePieceFoundIn(cell_up) || insidePieceFoundIn(cell_down))) {
             return Quaternion.Euler(0,0,0);
         }
         return Quaternion.identity;
@@ -424,27 +453,24 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_7(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 7 logic
-        if (cell_up <= 0) {
-            return Quaternion.Euler(0,0,0);
+        if (outsidePieceFoundIn(cell_left) || outsidePieceFoundIn(cell_right)) {
+
+            // just incase for some reason outside is used to connect up to 7
+            if (insidePieceFoundIn(cell_down) || outsidePieceFoundIn(cell_down)) {
+                return Quaternion.Euler(0,0,0);
+            }
+            if (insidePieceFoundIn(cell_up) || outsidePieceFoundIn(cell_up)) {
+                return Quaternion.Euler(0,0,180);
+            }
         }
 
-        if (cell_down <= 0) {
-            return Quaternion.Euler(0,0,180);
-        }
-
-        if (cell_left <= 0) {
-            return Quaternion.Euler(0,0,90);
-        }
-
-        if (cell_right <= 0) {
-            return Quaternion.Euler(0,0,270);
-        }
-
-        if (cell_up == 2 || cell_up == 1 || cell_up == 7 || cell_down == 2 || cell_down == 1 || cell_down == 7) {
-            return Quaternion.Euler(0,0,90);
-        }
-        if (cell_right == 2 || cell_right == 1 || cell_right == 7 || cell_left == 2 || cell_left == 1 || cell_left == 7) {
-            return Quaternion.Euler(0,0,90);
+        if (outsidePieceFoundIn(cell_up) || outsidePieceFoundIn(cell_down)) {
+            if (insidePieceFoundIn(cell_left) || outsidePieceFoundIn(cell_left)) {
+                return Quaternion.Euler(0,0,270);
+            }
+            if (insidePieceFoundIn(cell_right) || outsidePieceFoundIn(cell_right)) {
+                return Quaternion.Euler(0,0,90);
+            }
         }
         return Quaternion.identity;
     }
@@ -475,32 +501,28 @@ public class LevelGenerator : MonoBehaviour
 
                 GameObject tile = GetSegment(cell);
 
-                if (tile != null) { // adding level_1 position to set it at global
+                if (tile != null) {
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
+                    Quaternion rotation = Quaternion.identity;
+
                     if (cell == 1) {
-                        Quaternion rotation = getRotation_1(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_1(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 2) {
-                        Quaternion rotation = getRotation_2(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_2(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 3) {
-                        Quaternion rotation = getRotation_3(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_3(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 4) {
-                        Quaternion rotation = getRotation_4(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_4(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 7) {
-                        Quaternion rotation = getRotation_7(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
-                    } else {
-                        // default case
-                        segment = Instantiate(tile, pos, Quaternion.identity);
+                        rotation = getRotation_7(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     }
+                    segment = Instantiate(tile, pos, rotation);
+
                     if (segment != null) {
                         segment.transform.parent = topLeftQuad.transform;
                     }
-                }            
+                }           
             }
         }
 
@@ -522,35 +544,31 @@ public class LevelGenerator : MonoBehaviour
 
                 GameObject tile = GetSegment(cell);
 
-                if (tile != null) { // adding level_1 position to set it at global
+                if (tile != null) {
                     Vector3 pos = level_1.transform.position + new Vector3(col, -row, 0);
                     GameObject segment = null;
+                    Quaternion rotation = Quaternion.identity;
 
                     if (cell == 1) {
-                        Quaternion rotation = getRotation_1(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_1(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 2) {
-                        Quaternion rotation = getRotation_2(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_2(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 3) {
-                        Quaternion rotation = getRotation_3(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_3(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 4) {
-                        Quaternion rotation = getRotation_4(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
+                        rotation = getRotation_4(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     } else if (cell == 7) {
-                        Quaternion rotation = getRotation_7(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
-                        segment = Instantiate(tile, pos, rotation);
-                    } else {
-                        // default case
-                        segment = Instantiate(tile, pos, Quaternion.identity);
+                        rotation = getRotation_7(cell_right, cell_left, cell_up, cell_down, cell_leftUp, cell_leftDown, cell_rightUp, cell_rightDown);
                     }
+                    segment = Instantiate(tile, pos, rotation);
+
                     if (segment != null) {
                         segment.transform.parent = bottomLeftQuad.transform;
                     }
                 }            
             }
         }
+
         if (topLeftQuad != null) {
             //topRightQuad
             GameObject topRightQuad = Instantiate(topLeftQuad);
