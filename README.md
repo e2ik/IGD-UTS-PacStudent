@@ -20,3 +20,11 @@ Acitivity Log
 - Added remaining Sprite Assets
 - Set up Animation controllers to loop through
 - Added manual layout of maze
+
+27 Sep 2023
+- Made a simple level generator
+- Not very optimized, still a few problems
+
+28 Sep 2023
+- Refined and refactored generation code
+- Added Intro Audio and Ghost Music
