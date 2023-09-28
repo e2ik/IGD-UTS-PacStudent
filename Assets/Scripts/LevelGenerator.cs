@@ -31,10 +31,10 @@ public class LevelGenerator : MonoBehaviour
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
         
         // checking T junctions and outside corners
-        // {1,2,2,2,1,1,2,2,2,2,2,2,2,7},
-        // {2,5,5,5,2,2,5,5,5,5,5,5,5,3},
-        // {1,2,1,5,2,2,5,3,4,4,4,3,5,5},
-        // {1,2,1,5,1,1,5,4,0,0,0,4,5,3},
+        // {1,2,2,2,1,1,2,2,2,2,2,2,2,2},
+        // {2,5,5,5,2,2,5,5,5,5,5,5,5,5},
+        // {1,2,1,5,2,2,5,3,4,4,4,3,5,3},
+        // {1,2,1,5,1,1,5,4,0,0,0,4,5,4},
         // {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
         // {7,4,4,4,3,5,5,5,5,5,5,5,5,5},
         // {2,0,0,0,4,5,3,4,3,5,3,3,5,3},
@@ -47,22 +47,39 @@ public class LevelGenerator : MonoBehaviour
         // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
 
-        // checking Ts from botom
-        // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
-        // {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
-        // {7,4,4,4,4,3,5,3,4,4,4,3,5,5},
-        // {7,4,4,4,4,3,5,4,0,0,0,4,5,3},
-        // {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
-        // {2,5,5,3,3,5,5,5,5,5,5,5,5,5},
-        // {2,5,3,3,4,5,3,4,3,5,3,3,5,3},
-        // {2,5,4,3,3,5,3,4,3,5,3,3,5,4},
-        // {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
-        // {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
-        // {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
-        // {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        // checking outer wall T shape
+        // {1,2,2,2,2,2,1,1,2,2,2,2,2,7},
+        // {2,5,5,5,5,5,2,2,5,5,5,5,5,3},
+        // {2,5,5,5,5,1,1,1,1,5,5,5,5,5},
+        // {2,5,5,5,5,1,2,2,1,5,5,5,5,3},
+        // {2,5,1,1,5,5,5,5,5,5,5,5,5,3},
+        // {1,2,1,2,5,5,5,5,5,5,5,5,5,5},
+        // {1,2,1,2,5,5,3,4,3,5,3,3,5,3},
+        // {2,5,1,1,5,5,3,4,3,5,3,3,5,4},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
+        // {2,5,1,1,5,5,5,3,4,4,4,3,0,4},
+        // {2,5,2,2,5,5,5,4,3,4,4,3,0,3},
+        // {1,2,1,1,2,1,5,4,4,0,0,0,0,0},
         // {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
         // {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
+
+        // checking Ts from botom
+        {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
+        {2,5,5,5,5,5,5,5,5,5,5,5,5,3},
+        {7,4,4,4,4,3,5,3,4,4,4,3,5,5},
+        {7,4,4,4,4,3,5,4,0,0,0,4,5,3},
+        {2,5,5,5,5,5,5,3,4,4,4,3,5,3},
+        {2,5,5,3,3,5,5,5,5,5,5,5,5,5},
+        {2,5,3,3,4,5,3,4,3,5,3,3,5,3},
+        {2,5,4,3,3,5,3,4,3,5,3,3,5,4},
+        {2,5,4,4,5,5,5,5,5,5,5,5,5,4},
+        {1,2,7,7,2,1,5,3,4,4,4,3,0,4},
+        {0,0,0,0,0,2,5,4,3,4,4,3,0,3},
+        {0,0,0,0,0,2,5,4,4,0,0,0,0,0},
+        {0,0,0,0,0,2,5,4,4,0,3,4,4,0},
+        {2,2,2,2,2,1,5,3,3,0,4,0,0,0},
+        {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
 
         // Ts and pluses
         // {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
@@ -204,10 +221,10 @@ public class LevelGenerator : MonoBehaviour
         // {0,0,0,0,0,2,5,2,0,0,0,0,0},
 
         // super smol level
-        {1,2,2,2,2,2,2},
-        {2,5,5,5,5,5,5},
-        {2,5,5,3,3,5,5},
-        {2,5,5,4,4,5,5},
+        // {1,2,2,2,2,2,2},
+        // {2,5,5,5,5,5,5},
+        // {2,5,5,3,3,5,5},
+        // {2,5,5,4,4,5,5},
 
     };
     public int numRows { get; private set; }
@@ -296,219 +313,95 @@ public class LevelGenerator : MonoBehaviour
                 return Quaternion.Euler(0,0,0);
             }
         }
-
-        // if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_down) &&
-        //     outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_right)) {
-
-        //     if (nonWallPiece.Contains(cell_leftUp)) {
-        //         return Quaternion.Euler(0,0,180);
-        //     }
-        //     if (nonWallPiece.Contains(cell_rightUp)) {
-        //         return Quaternion.Euler(0,0,90);
-        //     }
-        //     if (nonWallPiece.Contains(cell_leftDown)) {
-        //         return Quaternion.Euler(0,0,270);
-        //     }
-        //     if (nonWallPiece.Contains(cell_rightDown)) {
-        //         return Quaternion.Euler(0,0,0);
-        //     }
-        // }
-
-        // if (cell_left <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_down) && 
-        //     nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_rightDown)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        // if (cell_down <= 0 && outsidePiece.Contains(cell_left) && nonWallPiece.Contains(cell_leftUp) &&
-        //     outsidePiece.Contains(cell_up)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        // if (cell_left <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_rightUp)) {
-        //     return Quaternion.Euler(0,0,90);
-        // }
-
-        // if (cell_down <= 0 && outsidePiece.Contains(cell_right) && outsidePiece.Contains(cell_up) &&
-        //     nonWallPiece.Contains(cell_leftUp)) {
-        //     return Quaternion.Euler(0,0,90);
-        // }
-
-        // if (cell_down <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftUp)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        // if (cell_right <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftDown)) {
-        //     return Quaternion.Euler(0,0,90);
-        // }                  
-        
-        // if (cell_up <= 0 && outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_down) &&
-        //     nonWallPiece.Contains(cell_leftDown)) {
-        //     return Quaternion.Euler(0,0,270);
-        // }
-
-        // if (cell_up <= 0 && outsidePiece.Contains(cell_right) && outsidePiece.Contains(cell_down) &&
-        //     nonWallPiece.Contains(cell_rightDown)) {
-        //     return Quaternion.Euler(0,0,0);
-        // }
-
-        // if (cell_left < 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_down) && nonWallPiece.Contains(cell_right)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        // if (cell_left < 0 && ((cell_up == 2 || cell_up == 7) && (cell_down == 0 || cell_down == 5 || cell_down == 6))) {
-        //     return Quaternion.Euler(0,0,90);
-        // }
-
-        // if (cell_left < 0 && cell_right == 1) {
-        //     return Quaternion.Euler(0,0,0);
-        // }
-
-        // if (cell_left < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_down == 2 || cell_down == 7))) {
-        //     return Quaternion.Euler(0,0,270);
-        // }
-
-        // if ((cell_right == 7 || cell_right == 2 || cell_right == 1) && (cell_down == 7 || cell_down == 2 || cell_down == 1)) {
-        //     return Quaternion.Euler(0,0,0);
-        // }
-
-        // if ((cell_up == 7 || cell_up == 2 || cell_up == 1) && (cell_right == 7 || cell_right == 2 || cell_right == 1)) {
-        //     return Quaternion.Euler(0,0,90);
-        // }
-
-        // if ((cell_left == 7 || cell_left == 2 || cell_left == 1) && (cell_down == 7 || cell_down == 2 || cell_down == 1)) {
-        //     return Quaternion.Euler(0,0,270);
-        // }
-         
-        // if ((cell_left == 7 || cell_left == 2 || cell_left == 1) && (cell_up == 7 || cell_up == 2 || cell_up == 1)) {
-        //     return Quaternion.Euler(0,0,180);
-        // }
-
-        // if (cell_right < 0) {
-        //     if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
-        //         return Quaternion.Euler(0,0,90);
-        //     }
-        //     if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
-        //         return Quaternion.Euler(0,0,0);
-        //     }
-        // }
-        
-        // if (cell_up < 0) {
-        //     if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
-        //         return Quaternion.Euler(0,0,90);
-        //     }
-        //     if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
-        //         return Quaternion.Euler(0,0,180);
-        //     }
-        // }
-
-        // if (cell_left < 0) {
-        //     if (cell_up == 7 || cell_up == 2 || cell_up == 1) {
-        //         return Quaternion.Euler(0,0,180);
-        //     }
-        //     if (cell_down == 7 || cell_down == 2 || cell_down == 1) {
-        //         return Quaternion.Euler(0,0,270);
-        //     }
-        // }
-        
-        // if (cell_down < 0) {
-        //     if (cell_right == 7 || cell_right == 2 || cell_right == 1) {
-        //         return Quaternion.Euler(0,0,0);
-        //     }
-        //     if (cell_left == 7 || cell_left == 2 || cell_left == 1) {
-        //         return Quaternion.Euler(0,0,270);
-        //     }
-        // }
         return Quaternion.identity;
     }
 
     Quaternion getRotation_2(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 2 logic
-        if ((cell_left == 2 || cell_left == 1 || cell_left == 7) && (cell_right == 2 || cell_right == 7 || cell_right == 1)) {
-            return Quaternion.Euler(0,0,0);
+        if (outsidePiece.Contains(cell_left) || outsidePiece.Contains(cell_right)) {
+            if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_down)) {
+                return Quaternion.Euler(0,0,90);
+            }
         }
 
-        if (cell_down == 2 || cell_up == 2 || cell_up == 1 || cell_down == 1 || cell_up == 7 || cell_down == 7) {
-            return Quaternion.Euler(0,0,90);
+        if (outsidePiece.Contains(cell_up) || outsidePiece.Contains(cell_down)) {
+            if (outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_right)) {
+                return Quaternion.Euler(0,0,0);
+            }
         }
-        
-        if (cell_right == 2 || cell_left == 2 || cell_right == 1 || cell_left == 1) {
+
+        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_right)) {
+            return Quaternion.Euler(0,0,90);
+        } else {
             return Quaternion.Euler(0,0,0);
         }
-        return Quaternion.identity;
     }
 
     Quaternion getRotation_3(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 3 logic
-        if ((cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 3 || cell_up == 4) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
-            return Quaternion.Euler(0,0,180);
-        }
-        
-        if ((cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_up == 3 || cell_up == 4) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
-            return Quaternion.Euler(0,0,90);
+        if (insidePiece.Contains(cell_up) && insidePiece.Contains(cell_down) &&
+            insidePiece.Contains(cell_right) && insidePiece.Contains(cell_left)) {
+                if (nonWallPiece.Contains(cell_leftUp)) {
+                    return Quaternion.Euler(0,0,180);
+                }
+                if (nonWallPiece.Contains(cell_leftDown)) {
+                    return Quaternion.Euler(0,0,270);
+                }
+                if (nonWallPiece.Contains(cell_rightUp)) {
+                    return Quaternion.Euler(0,0,90);
+                }
+                if (nonWallPiece.Contains(cell_rightUp)) {
+                    return Quaternion.Euler(0,0,0);
+                }
         }
 
-        if ((cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_up == 5 || cell_up == 0 || cell_up == 6)) {
+        if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftUp)) {
+            return Quaternion.Euler(0,0,180);
+        }
+
+        if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_leftDown)) {
             return Quaternion.Euler(0,0,270);
         }
 
-        if ((cell_left == 5 || cell_left == 0 || cell_left == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
+        if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_rightUp)) {
             return Quaternion.Euler(0,0,90);
         }
-         
-        if ((cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_down == 5 || cell_down == 0 || cell_down == 6)) {
-            return Quaternion.Euler(0,0,180);
-        }
 
-        if (cell_left < 0 && cell_leftUp <= 0) {
+        if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_down) && nonWallPiece.Contains(cell_rightDown)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        if (cell_left < 0 && cell_rightUp <= 0) {
-            return Quaternion.Euler(0,0,270);
+        // if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_down)) {
+        //     return Quaternion.Euler(0,0,0);
+        // }
+
+        // if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_down)) {
+        //     return Quaternion.Euler(0,0,270);
+        // }
+
+        // if (insidePiece.Contains(cell_right) && insidePiece.Contains(cell_up)) {
+        //     return Quaternion.Euler(0,0,90);
+        // }
+
+        // if (insidePiece.Contains(cell_left) && insidePiece.Contains(cell_up)) {
+        //     return Quaternion.Euler(0,0,180);
+        // }
+
+        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_down)) {
+            return Quaternion.Euler(0,0,90);
         }
 
-        if (cell_right < 0 && ((cell_up == 5 || cell_up == 0 || cell_up == 6) && (cell_left == 5 || cell_left == 0 || cell_left == 6))) {
+        if (nonWallPiece.Contains(cell_left) && nonWallPiece.Contains(cell_up)) {
             return Quaternion.Euler(0,0,0);
         }
 
-        if (cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
+        if (nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_down)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (cell_right < 0 && (cell_leftUp == 0 || cell_leftUp == 5 || cell_leftUp == 6)) {
-            return Quaternion.Euler(0,0,180);
-        }
-
-        if (cell_left < 0 && (cell_rightUp == 0 || cell_rightUp == 5 || cell_rightUp == 6)) {
-            return Quaternion.Euler(0,0,90);
-        }
-
-        if ((cell_right == 4 || cell_right == 3) && (cell_down == 4 || cell_down == 3) && (cell_left == 3 || cell_left == 4) && (cell_up == 3 || cell_up == 4)) {
-            if (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) {
-                return Quaternion.Euler(0,0,180);
-            }
-            if (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6) {
-                return Quaternion.Euler(0,0,270);
-            }
-            if (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6) {
-                return Quaternion.Euler(0,0,90);
-            }
-            if (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6) {
-                return Quaternion.Euler(0,0,0);
-            }
-        }
-
-        if ((cell_left == 4 || cell_left == 3) && (cell_down == 4 || cell_down == 3)) {
-            return Quaternion.Euler(0,0,270);
-        }
-
-        if (cell_right == 4 && cell_up == 4) {
-            return Quaternion.Euler(0,0,90);
-        }
-
-        if (cell_left == 4 && cell_down == 4) {
+        if (nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_up)) {
             return Quaternion.Euler(0,0,270);
         }
         return Quaternion.identity;
@@ -517,11 +410,12 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_4(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 4 logic
-        if (cell_up == 5 || cell_down == 5 || cell_up == 0 || cell_down == 0 || cell_up == 6 || cell_down == 6) {
+        if ((nonWallPiece.Contains(cell_up) || nonWallPiece.Contains(cell_down)) &&
+            (insidePiece.Contains(cell_left) || insidePiece.Contains(cell_right))) {
             return Quaternion.Euler(0,0,90);
         }
-
-        if (cell_left == 5 || cell_right == 5 || cell_left == 0 || cell_right == 0 || cell_left == 6 || cell_right == 6) {
+        if ((nonWallPiece.Contains(cell_left) || nonWallPiece.Contains(cell_right)) &&
+            (insidePiece.Contains(cell_up) || insidePiece.Contains(cell_down))) {
             return Quaternion.Euler(0,0,0);
         }
         return Quaternion.identity;
