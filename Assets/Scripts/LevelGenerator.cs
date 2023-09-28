@@ -621,7 +621,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         } else {
-            Debug.LogError("no topLeftQad");
+            Debug.LogError("no bottomLeftQad");
         }
     }
 
