@@ -1,18 +1,17 @@
 using System.Collections;
-using UnityEngine.Events;
 using System.Collections.Generic;
-
 using UnityEngine;
 
-public class StartMusicThenGhost : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioClip intro;
     [SerializeField] private AudioClip ghostMusic;
-    public UnityEvent onGhostStart;
     private AudioSource clips;
+    private ZombieMovement script;
     void Start()
     {
         clips = GetComponent<AudioSource>();
+        script = FindObjectOfType<ZombieMovement>();
         StartCoroutine(delayAfterStart());
     }
 
@@ -26,6 +25,7 @@ public class StartMusicThenGhost : MonoBehaviour
         clips.clip = ghostMusic;
         clips.loop = true;
         clips.Play();
-        onGhostStart.Invoke();
+        script.StartMovement();
+
     }
 }
