@@ -20427,7 +20427,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -20437,8 +20437,8 @@ MonoBehaviour:
   m_RefResolutionY: 1000
   m_UpscaleRT: 0
   m_PixelSnapping: 0
-  m_CropFrameX: 1
-  m_CropFrameY: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
   m_StretchFill: 0
 --- !u!114 &963194230
 MonoBehaviour:
@@ -20452,7 +20452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edc19586a5d9304bb121c7a5b8f414d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setCamPos: {x: 0, y: 0, z: 0}
+  viewPadding: 1
 --- !u!1001 &969244257
 PrefabInstance:
   m_ObjectHideFlags: 0
