@@ -28,3 +28,4 @@ Acitivity Log
 28 Sep 2023
 - Refined and refactored generation code
 - Added Intro Audio and Ghost Music
+- Added all Sprites to scene view for demo
