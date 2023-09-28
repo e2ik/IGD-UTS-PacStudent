@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -80,21 +81,21 @@ public class LevelGenerator : MonoBehaviour
         // {0,0,0,0,0,0,5,0,0,0,4,0,0,0},
 
         // just for fun - outside walls
-        // {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        // {0,0,0,1,2,2,1,1,2,2,1,0,0,0},
-        // {0,0,1,1,5,5,2,2,5,5,1,2,1,0},
-        // {0,0,2,5,5,1,1,1,1,5,5,5,2,0},
-        // {0,1,1,5,5,1,2,2,1,5,5,1,1,0},
-        // {0,2,5,5,5,5,5,5,5,5,5,2,0,0},
-        // {0,1,2,1,5,5,5,5,5,5,5,1,2,2},
-        // {0,1,2,1,5,5,5,5,5,5,5,0,0,0},
-        // {0,2,5,5,5,5,5,5,5,5,5,1,2,2},
-        // {0,2,5,1,2,2,1,5,5,5,5,2,0,0},
-        // {0,2,5,1,1,1,1,5,5,5,5,1,1,0},
-        // {0,2,5,5,2,2,5,5,5,5,5,5,2,0},
-        // {0,1,2,2,1,1,1,0,1,2,1,5,2,0},
-        // {0,0,0,0,0,0,2,0,2,0,1,2,1,0},
-        // {0,0,0,0,0,0,2,0,2,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,1,2,2,1,1,2,2,1,0,0,0},
+        {0,0,1,1,5,5,2,2,5,5,1,2,1,0},
+        {0,0,2,5,5,1,1,1,1,5,5,5,2,0},
+        {0,1,1,5,5,1,2,2,1,5,5,1,1,0},
+        {0,2,5,5,5,5,5,5,5,5,5,2,0,0},
+        {0,1,2,1,5,5,5,5,5,5,5,1,2,2},
+        {0,1,2,1,5,5,5,5,5,5,5,0,0,0},
+        {0,2,5,5,5,5,5,5,5,5,5,1,2,2},
+        {0,2,5,1,2,2,1,5,5,5,5,2,0,0},
+        {0,2,5,1,1,1,1,5,5,5,5,1,1,0},
+        {0,2,5,5,2,2,5,5,5,5,5,5,2,0},
+        {0,1,2,2,1,1,1,0,1,2,1,5,2,0},
+        {0,0,0,0,0,0,2,0,2,0,1,2,1,0},
+        {0,0,0,0,0,0,2,0,2,0,0,0,0,0},
 
         // {1,2,7,2,7,2,2,2,2,2,2,2,2,7},
         // {2,5,4,0,4,5,5,5,5,5,5,5,5,4},
@@ -191,17 +192,17 @@ public class LevelGenerator : MonoBehaviour
         // {1,2,2,2,2,1,5,5,1,2,2,2,1},
 
         // connected pluses smol size
-        {1,2,2,2,2,2,2,2,2,2,2,2,2},
-        {2,5,5,5,5,5,5,5,5,5,5,5,5},
-        {2,5,5,3,3,5,3,3,5,3,3,5,3},
-        {2,5,3,3,3,4,3,3,4,3,3,4,3},
-        {2,5,3,3,3,4,3,3,4,3,3,4,3},
-        {2,5,5,3,3,5,3,3,5,3,3,5,3},
-        {2,5,5,5,5,5,5,5,5,5,5,5,5},
-        {1,2,2,2,2,1,5,1,2,2,2,2,2},
-        {0,0,0,0,0,2,5,2,0,0,0,0,0},
+        // {1,2,2,2,2,2,2,2,2,2,2,2,2},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5},
+        // {2,5,5,3,3,5,3,3,5,3,3,5,3},
+        // {2,5,3,3,3,4,3,3,4,3,3,4,3},
+        // {2,5,3,3,3,4,3,3,4,3,3,4,3},
+        // {2,5,5,3,3,5,3,3,5,3,3,5,3},
+        // {2,5,5,5,5,5,5,5,5,5,5,5,5},
+        // {1,2,2,2,2,1,5,1,2,2,2,2,2},
+        // {0,0,0,0,0,2,5,2,0,0,0,0,0},
 
-        //super smol level
+        // super smol level
         // {1,2,2,2,2,2,2},
         // {2,5,5,5,5,5,5},
         // {2,5,5,3,3,5,5},
@@ -210,6 +211,9 @@ public class LevelGenerator : MonoBehaviour
     };
     public int numRows { get; private set; }
     public int numCols { get; private set; }
+    private List<int> outsidePiece = new List<int> { 2, 1, 7 };
+    private List<int> nonWallPiece = new List<int> { 0, 5, 6 };
+    private List<int> insidePiece = new List<int> { 3, 4 } ;
 
     void Start()
     {
@@ -227,46 +231,52 @@ public class LevelGenerator : MonoBehaviour
     Quaternion getRotation_1(int cell_right, int cell_left, int cell_up, int cell_down, int cell_leftUp, int cell_leftDown, int cell_rightUp, int cell_rightDown) {
 
         // All cell 1 logic
-        if ((cell_up == 2 || cell_up == 1 || cell_up == 7) && (cell_left == 1 || cell_left == 2 || cell_left == 7) && (cell_right == 1 || cell_right == 2 || cell_right == 7) && (cell_down == 1 || cell_down == 2 || cell_down == 7)) {
-            if (cell_leftUp == 5 || cell_leftUp == 6 || cell_leftUp == 0) {
+        if (outsidePiece.Contains(cell_up) && outsidePiece.Contains(cell_down) &&
+            outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_right)) {
+
+            if (nonWallPiece.Contains(cell_leftUp)) {
                 return Quaternion.Euler(0,0,180);
             }
-            if (cell_rightUp == 5 || cell_rightUp == 6 || cell_rightUp == 0) {
+            if (nonWallPiece.Contains(cell_rightUp)) {
                 return Quaternion.Euler(0,0,90);
             }
-            if (cell_leftDown == 5 || cell_leftDown == 6 || cell_leftDown == 0) {
+            if (nonWallPiece.Contains(cell_leftDown)) {
                 return Quaternion.Euler(0,0,270);
             }
-            if (cell_rightDown == 5 || cell_rightDown == 6 || cell_rightDown == 0) {
+            if (nonWallPiece.Contains(cell_rightDown)) {
                 return Quaternion.Euler(0,0,0);
             }
         }
 
-        if (cell_left <= 0 && (cell_up == 2 || cell_up == 7) && (cell_down == 5 || cell_down == 0 || cell_down == 6) && (cell_right == 5 || cell_right == 0 || cell_right == 6) && (cell_rightDown == 5 || cell_rightDown == 0 || cell_rightDown == 6)) {
+        if (cell_left <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_down) && 
+            nonWallPiece.Contains(cell_right) && nonWallPiece.Contains(cell_rightDown)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (cell_down <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6) && (cell_up == 1 || cell_up == 2 || cell_up == 7)) {
+        if (cell_down <= 0 && outsidePiece.Contains(cell_left) && nonWallPiece.Contains(cell_leftUp) &&
+            outsidePiece.Contains(cell_up)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (cell_left <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_rightUp == 5 || cell_rightUp == 0 || cell_rightUp == 6)) {
+        if (cell_left <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_rightUp)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if ((cell_right == 1 || cell_right == 2 || cell_right == 7) && cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+        if (cell_down <= 0 && outsidePiece.Contains(cell_right) && outsidePiece.Contains(cell_up) &&
+            nonWallPiece.Contains(cell_leftUp)) {
             return Quaternion.Euler(0,0,90);
         }
 
-        if (cell_down <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftUp == 5 || cell_leftUp == 0 || cell_leftUp == 6)) {
+        if (cell_down <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftUp)) {
             return Quaternion.Euler(0,0,180);
         }
 
-        if (cell_right <= 0 && (cell_up == 2 || cell_up == 7 || cell_up == 1) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
+        if (cell_right <= 0 && outsidePiece.Contains(cell_up) && nonWallPiece.Contains(cell_leftDown)) {
             return Quaternion.Euler(0,0,90);
         }                  
         
-        if (cell_up <= 0 && (cell_left == 2 || cell_left == 7 || cell_left == 1) && (cell_down == 1 || cell_down == 2 || cell_down == 7) && (cell_leftDown == 5 || cell_leftDown == 0 || cell_leftDown == 6)) {
+        if (cell_up <= 0 && outsidePiece.Contains(cell_left) && outsidePiece.Contains(cell_down) &&
+            nonWallPiece.Contains(cell_leftDown)) {
             return Quaternion.Euler(0,0,270);
         }
 
