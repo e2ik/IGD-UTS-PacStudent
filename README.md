@@ -29,3 +29,7 @@ Acitivity Log
 - Refined and refactored generation code
 - Added Intro Audio and Ghost Music
 - Added all Sprites to scene view for demo
+
+29 Sep 2023
+- Copied Tween and Tweener from Week 7
+- Rebased my zombie movement to use Tweener
