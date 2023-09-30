@@ -31972,7 +31972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1440984822}
   m_Layer: 0
-  m_Name: AssetDemo
+  m_Name: SpriteAssets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41910,7 +41910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1919838380}
   m_Layer: 0
-  m_Name: AssetAnimationDemo
+  m_Name: AnimationDemo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
