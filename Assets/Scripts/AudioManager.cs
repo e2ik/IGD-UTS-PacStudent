@@ -7,11 +7,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip intro;
     [SerializeField] private AudioClip ghostMusic;
     private AudioSource clips;
-    private ObjectMovement script;
+    private ZombieMovement script;
     void Start()
     {
         clips = GetComponent<AudioSource>();
-        script = FindObjectOfType<ObjectMovement>();
+        script = FindObjectOfType<ZombieMovement>();
         StartCoroutine(delayAfterStart());
     }
 

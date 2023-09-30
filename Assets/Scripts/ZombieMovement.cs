@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ObjectMovement : MonoBehaviour {
+public class ZombieMovement : MonoBehaviour {
     private Animator animator;
     private AudioSource audioSource;
     private Vector3 startPos;

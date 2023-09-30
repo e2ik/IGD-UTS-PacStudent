@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AnimationController : MonoBehaviour
+public class CycleRunStates : MonoBehaviour
 {
     private Animator animator;
     private int state1 = 0;
