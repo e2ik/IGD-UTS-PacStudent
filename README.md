@@ -33,3 +33,7 @@ Acitivity Log
 29 Sep 2023
 - Copied Tween and Tweener from Week 7
 - Rebased my zombie movement to use Tweener
+
+3 Oct 2023
+- Final Checks
+- Checked animator with Emma
