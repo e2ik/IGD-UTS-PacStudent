@@ -28,3 +28,7 @@ Acitivity Log
 28 Sep 2023
 - Refined and refactored generation code
 - Added Intro Audio and Ghost Music
+
+3 Oct 2023
+- Final Checks
+- Checked animator with Emma
