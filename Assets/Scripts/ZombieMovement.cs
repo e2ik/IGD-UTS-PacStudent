@@ -1,76 +1,97 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ZombieMovement : MonoBehaviour {
     private Animator animator;
     private AudioSource audioSource;
-    private Vector3 startPos;
-    private Vector3 rightEndPos;
-    private Vector3 downEndPos;
-    private Vector3 leftEndPos;
-    private Vector3 upEndPos;
-    private Vector3 currentPos;
-    public float moveSpeed;
-    private float moveLength;
-    private float moveStartTime;
+    private Tweener tweener;
+    private bool isMoving = false;
+
+    private enum MovementDirection { Right, Down, Left, Up }
+    private MovementDirection currentDirection = MovementDirection.Right;
+    private Vector3 startPosition;
+    [SerializeField]private float moveSpeed = 4.0f;
 
     void Start() {
-        moveSpeed = 3.0f;
+        tweener = GetComponent<Tweener>();
+        isMoving = false;
         animator = GetComponent<Animator>();
-        animator.SetBool("movingRight", true);
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(PlayAudio());
-        startPos = transform.position;
-        rightEndPos = startPos + Vector3.right * 5.0f;
-        downEndPos = rightEndPos + Vector3.down * 4.0f;
-        leftEndPos = downEndPos + Vector3.left * 5.0f;
-        upEndPos = leftEndPos + Vector3.up * 4.0f;
-        moveSpeed = 3.0f;
-
-        currentPos = rightEndPos;
-        moveLength = Vector3.Distance(startPos, currentPos);
-        moveStartTime = Time.time;
+        startPosition = transform.position;
     }
 
     void Update() {
-        float moveDistance = (Time.time - moveStartTime) * moveSpeed;
+        moveZombie();
+    }
 
-        if (moveDistance >= moveLength) {
-            moveStartTime = Time.time;
-            startPos = transform.position;
-
-            if (currentPos == rightEndPos) {
-                currentPos = downEndPos;
-                animator.SetBool("movingRight", false);
-                animator.SetBool("movingDown", true);
-            }
-            else if (currentPos == downEndPos) {
-                currentPos = leftEndPos;
-                animator.SetBool("movingDown", false);
-                animator.SetBool("movingLeft", true);
-            }
-            else if (currentPos == leftEndPos) {
-                currentPos = upEndPos;
-                animator.SetBool("movingLeft", false);
-                animator.SetBool("movingUp", true);
-            }
-            else if (currentPos == upEndPos) {
-                currentPos = rightEndPos;
-                animator.SetBool("movingUp", false);
-                animator.SetBool("movingRight", true);
-            }
-            moveLength = Vector3.Distance(startPos, currentPos);
-        }
-        else {
-            float lerpFraction = moveDistance / moveLength;
-            transform.position = Vector3.Lerp(startPos, currentPos, lerpFraction);
+    public void TurnOffAnimParameters() {
+        AnimatorControllerParameter[] parameters = animator.parameters;
+        foreach (AnimatorControllerParameter parameter in parameters) {
+                if (parameter.type == AnimatorControllerParameterType.Bool)
+                {
+                    animator.SetBool(parameter.name, false);
+                }
         }
     }
+    
+    void moveZombie() {
+
+        if (isMoving) {
+            Vector3 endPosition = startPosition;
+            TurnOffAnimParameters();
+
+            switch (currentDirection) {
+                case MovementDirection.Right:
+                    animator.SetBool("movingRight", true);
+                    endPosition += Vector3.right * 5.0f;
+                    break;
+                case MovementDirection.Down:
+                    animator.SetBool("movingDown", true);
+                    startPosition = endPosition;
+                    endPosition += Vector3.down * 4.0f;
+                    break;
+                case MovementDirection.Left:
+                    animator.SetBool("movingLeft", true);
+                    endPosition += Vector3.left * 5.0f;
+                    break;
+                case MovementDirection.Up:
+                    animator.SetBool("movingUp", true);
+                    endPosition += Vector3.up * 4.0f;
+                    break;
+            }
+
+            float distanceToMove = Vector3.Distance(transform.position, endPosition);
+
+            // this is important for uniform movement speed
+            // tweener only interpolates, 
+            float animDuration = distanceToMove / moveSpeed;
+
+            if (tweener != null) {
+                tweener.AddTween(transform, transform.position, endPosition, animDuration);
+            }
+
+            if (distanceToMove <= 0.01) {
+                startPosition = endPosition;
+                currentDirection = (MovementDirection)(((int)currentDirection + 1) % 4);
+
+                if (currentDirection == MovementDirection.Right) {
+                    startPosition = transform.position;
+                }
+            }
+        }
+    }
+
     private IEnumerator PlayAudio() {
         yield return new WaitForSeconds(0.0f);
         if (audioSource != null) {
             audioSource.Play();
         }
     }
-    
+
+    public void StartMovement() {
+        isMoving = true;
+        StartCoroutine(PlayAudio());
+        animator.SetBool("movingRight", true);
+    }
 }
